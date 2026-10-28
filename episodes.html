@@ -46,8 +46,32 @@
   .ep-noresults{font-size:14px;color:var(--muted);margin:12px 0 4px}
   @media (max-width:600px){.ep-search input[type="search"]{flex:1 1 100%}}
 </style>
+<style>
+  /* SITE-SEARCH */
+  .site-search{background:#f4f6f9;border:1px solid #dde3ea;border-left:5px solid #d9a441;padding:16px 18px;margin:18px 0;font-family:Helvetica,Arial,sans-serif}
+  .ss-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#0a1b33;display:block;margin:0 0 8px;font-weight:700}
+  .ss-row{display:flex;gap:8px;flex-wrap:wrap}
+  .ss-input{font-family:Helvetica,Arial,sans-serif;font-size:16px;min-height:46px;padding:10px 12px;border:1px solid #dde3ea;border-radius:6px;background:#fff;color:#1c2430;flex:1 1 240px;min-width:0;-webkit-appearance:none;appearance:none}
+  .ss-btn{font-family:Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:#0a1b33;color:#fff;border:1px solid #0a1b33;border-radius:6px;padding:10px 20px;min-height:46px;cursor:pointer}
+  .ss-btn:hover{background:#0e2444;color:#e9c877}
+  .ss-hint{font-size:13.5px;color:#5a6572;margin:8px 0 0}
+  .ss-results{margin-top:12px;border-top:1px solid #dde3ea;padding-top:10px}
+  .ss-count{font-size:12.5px;color:#5a6572;margin:0 0 6px}
+  .ss-result{display:block;text-decoration:none;color:#1c2430;padding:10px 8px;border-bottom:1px solid #dde3ea;background:#fff}
+  .ss-result:last-child{border-bottom:none}
+  .ss-result:hover{background:#f4f6f9}
+  .ss-rtitle{display:block;font-size:16.5px;font-weight:700;color:#0a1b33;line-height:1.3}
+  .ss-rmeta{display:block;font-size:12px;color:#5a6572;margin:2px 0}
+  .ss-badge{display:inline-block;background:#d9a441;color:#0a1b33;border-radius:3px;padding:1px 7px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
+  .ss-rsnip{display:block;font-size:14px}
+  @media (max-width:600px){.ss-input{flex:1 1 100%}}
+</style>
 </head>
 <body>
+<!-- GTranslate: sitewide translate button (added 2026-10-28) -->
+<div class="gtranslate-bar" style="text-align:center;padding:10px 8px 2px;font-family:Helvetica,Arial,sans-serif;font-size:13px"><span style="letter-spacing:1px;text-transform:uppercase;margin-right:8px">Translate</span><span class="gtranslate_wrapper"></span></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","fr","pt","zh-CN","zh-TW","ar","vi","ko","ru","uk","ht","it","de","ja","hi","tl","pl"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
 <header>
   <p class="name">Run the Room</p>
   <p class="tag">The weekly podcast on how business actually works — from the first idea to a running organization.</p>
@@ -62,6 +86,23 @@
   <a href="index.html#contact">Contact</a>
 </nav>
 <main>
+
+<!-- SITE-SEARCH -->
+<div class="site-search">
+  <form id="ss-form" data-index="search-index.json" role="search">
+    <label class="ss-label" for="ss-q">Search the whole site</label>
+    <div class="ss-row">
+      <input type="search" id="ss-q" class="ss-input" autocomplete="off" enterkeyhint="search" placeholder="Try &quot;pricing&quot;, &quot;hiring&quot;, &quot;bookkeeping&quot;, or your state&hellip;">
+      <button type="submit" class="ss-btn">Search</button>
+    </div>
+    <p class="ss-hint">Search every page, state resource guide, and episode on runtheroompodcast.com.</p>
+    <div class="ss-results" id="ss-results" hidden>
+      <p class="ss-count" id="ss-count" aria-live="polite"></p>
+      <div id="ss-list"></div>
+    </div>
+  </form>
+</div>
+<!-- /SITE-SEARCH -->
   <h2 style="margin-top:6px">Episodes</h2>
   <p>Every episode of <strong>Run the Room</strong>, newest first — <strong>2 in the feed</strong>. Season one builds a business from the very beginning: what a business is, the idea and the customer, money in and money out, the books, pricing, the first sale, being findable, your first people, running the days, and leading people — with the meetings module later in the season. Hosted by Alex and Jordan.</p>
   <div class="listen">
@@ -83,16 +124,16 @@
 <article class="ep">
   <h3>Starting From Zero: What a Business Actually Is</h3>
   <p class="meta">October 25, 2026 · 22:37</p>
-  <a class="play" href="https://podcasts.apple.com/podcast/id6825404495">▶ Play episode</a>
-  <details class="desc"><summary>Episode notes &amp; sources</summary><div><p>Starting From Zero opens Run the Room at the true beginning: what a business actually is. Alex and Jordan define a business as an organized answer to somebody else&#x27;s problem, offered in exchange for money, with the machinery to keep that exchange going — then test that definition against Peter Drucker&#x27;s 1954 claim that the purpose of a business is to create a customer, the three legs of offer, customers, and money, Bureau of Labor Statistics survival data, cash-flow research, and four common impostors: a hobby, a job you buy yourself, an audience, and a product without a system. New episodes every Sunday. Run the Room builds business from the very beginning — foundations first, one step each week.</p><p>Sources:<br>- Peter Drucker, The Practice of Management (1954), p. 37: &quot;There is only one valid definition of business purpose: to create a customer&quot; — <a href="https://en.wikiquote.org/w/index.php?title=Peter_Drucker&amp;oldid=2975895">https://en.wikiquote.org/w/index.php?title=Peter_Drucker&amp;oldid=2975895</a><br>- U.S. Small Business Administration, Launch your business guide (structure, registration, tax IDs, licenses): <a href="https://www.sba.gov/es/guia-de-negocios/lance-su-empresa">https://www.sba.gov/es/guia-de-negocios/lance-su-empresa</a><br>- U.S. Small Business Administration, Choose a business structure (updated March 7, 2025): <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure">https://www.sba.gov/business-guide/launch-your-business/choose-business-structure</a><br>- Bureau of Labor Statistics, Business Employment Dynamics establishment survival through March 2025 (77.9% year 1, 51.4% at 5 years for the 2020 cohort, 34.7% at 10 years for the 2015 cohort), summarized at: <a href="https://startbusinessbystate.com/business-survival-rates-by-state/">https://startbusinessbystate.com/business-survival-rates-by-state/</a><br>- SCORE / U.S. Bank study cited on cash flow and small business failure (about 82% tied to poor cash flow management), and Federal Reserve 2026 Report on Employer Firms based on the 2025 Small Business Credit Survey: <a href="https://www.oneparkfinancial.com/blog/why-82-percent-of-small-businesses-fail-because-of-cash-flow">https://www.oneparkfinancial.com/blog/why-82-percent-of-small-businesses-fail-because-of-cash-flow</a></p><p>To verify items without a stable URL: search the Bureau of Labor Statistics site for Business Employment Dynamics Table 7 establishment age and survival, and search the Federal Reserve site for the 2026 Report on Employer Firms, Small Business Credit Survey.</p></div></details>
+  <a class="play" href="https://muse.ai/podcasts/media/1337692426099284/46958af6-3f81-48da-90a8-95c133c7c40f/ep-cc02c786-223a-4972-91bf-a0b87e52f68f.mp3">▶ Play episode</a>
+  <details class="desc"><summary>Episode notes &amp; sources</summary><div><p>Starting From Zero opens Run the Room at the true beginning: what a business actually is. Alex and Jordan define a business as an organized answer to somebody else&#x27;s problem, offered in exchange for money, with the machinery to keep that exchange going — then test that definition against Peter Drucker&#x27;s 1954 claim that the purpose of a business is to create a customer, the three legs of offer, customers, and money, Bureau of Labor Statistics survival data, cash-flow research, and four common impostors: a hobby, a job you buy yourself, an audience, and a product without a system. New episodes every Sunday. Run the Room builds business from the very beginning — foundations first, one step each week.</p><p>Sources:<br>- Peter Drucker, The Practice of Management (1954), p. 37: &quot;There is only one valid definition of business purpose: to create a customer&quot; — <a href="https://en.wikiquote.org/w/index.php?title=Peter_Drucker&amp;oldid=2975895">https://en.wikiquote.org/w/index.php?title=Peter_Drucker&amp;oldid=2975895</a><br>- U.S. Small Business Administration, Launch your business guide (structure, registration, tax IDs, licenses): <a href="https://www.sba.gov/business-guide/launch-your-business">https://www.sba.gov/business-guide/launch-your-business</a><br>- U.S. Small Business Administration, Choose a business structure (updated March 7, 2025): <a href="https://www.sba.gov/business-guide/launch-your-business/choose-business-structure">https://www.sba.gov/business-guide/launch-your-business/choose-business-structure</a><br>- Bureau of Labor Statistics, Business Employment Dynamics establishment survival through March 2025 (77.9% year 1, 51.4% at 5 years for the 2020 cohort, 34.7% at 10 years for the 2015 cohort), summarized at: <a href="https://startbusinessbystate.com/business-survival-rates-by-state/">https://startbusinessbystate.com/business-survival-rates-by-state/</a><br>- SCORE / U.S. Bank study cited on cash flow and small business failure (about 82% tied to poor cash flow management), and Federal Reserve 2026 Report on Employer Firms based on the 2025 Small Business Credit Survey: <a href="https://www.oneparkfinancial.com/blog/why-82-percent-of-small-businesses-fail-because-of-cash-flow">https://www.oneparkfinancial.com/blog/why-82-percent-of-small-businesses-fail-because-of-cash-flow</a></p><p>To verify items without a stable URL: search the Bureau of Labor Statistics site for Business Employment Dynamics Table 7 establishment age and survival, and search the Federal Reserve site for the 2026 Report on Employer Firms, Small Business Credit Survey.</p></div></details>
 </article>
 <article class="ep">
   <h3>Run the Room — Trailer</h3>
   <p class="meta">October 19, 2026 · 0:48</p>
-  <a class="play" href="https://podcasts.apple.com/podcast/id6825404495">▶ Play episode</a>
+  <a class="play" href="https://muse.ai/podcasts/media/1337692426099284/46958af6-3f81-48da-90a8-95c133c7c40f/ep-e76bffcf-8257-4a4a-a6f1-37d7d3fa2863.mp3">▶ Play episode</a>
   <details class="desc"><summary>Episode notes &amp; sources</summary><div><p>Most meetings are a waste of time — not because meetings are broken, but because nobody ever learned how to run one. Run the Room takes one meeting type each week through three parts: planning, running, and follow-up. New episodes every Sunday at 7:00 PM ET. First up: the IEP meeting.</p></div></details>
 </article>
-  <p class="note">Index generated October 26, 2026 from the show's public feed and refreshed after every feed sync.</p>
+  <p class="note">Index generated October 27, 2026 from the show's public feed and refreshed after every feed sync.</p>
 </main>
 <footer>
   <p><span class="pname">Run the Room</span> · New episodes Sundays at 7:00 PM ET · Produced by Charles Mayfield</p>
@@ -165,5 +206,115 @@
   window.addEventListener('load',apply);
 })();
 </script>
+
+<!-- SITE-SEARCH -->
+<script>
+(function(){
+  var form=document.getElementById('ss-form');
+  if(!form)return;
+  var input=document.getElementById('ss-q');
+  var box=document.getElementById('ss-results');
+  var count=document.getElementById('ss-count');
+  var list=document.getElementById('ss-list');
+  var INDEX_URL=form.getAttribute('data-index')||'search-index.json';
+  var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var entries=null,loading=null,lastResults=[];
+  function load(){
+    if(entries)return Promise.resolve(entries);
+    if(loading)return loading;
+    loading=fetch(INDEX_URL).then(function(r){return r.json();}).then(function(j){entries=j.entries||[];return entries;});
+    return loading;
+  }
+  function fmtDate(iso){
+    if(!iso)return '';
+    var p=iso.split('-');
+    if(p.length!==3)return iso;
+    return MONTHS[parseInt(p[1],10)-1]+' '+parseInt(p[2],10)+', '+p[0];
+  }
+  function norm(s){return (s||'').toLowerCase().replace(/&/g,' and ').replace(/\s+/g,' ');}
+  function score(e,q,terms){
+    var t=norm(e.t),w=e.w||'',s=0,i,term;
+    var nq=norm(q).trim();
+    if(t.indexOf(nq)>=0)s+=120;
+    if(t.indexOf(nq)===0)s+=40;
+    var words=t.split(/[^a-z0-9]+/);
+    for(i=0;i<terms.length;i++){
+      term=terms[i];
+      if(!term)continue;
+      if(words.indexOf(term)>=0)s+=34;
+      else if(t.indexOf(term)>=0)s+=22;
+      if(e.s&&e.s.toLowerCase().indexOf(term)>=0)s+=6;
+      if(w.indexOf(term)>=0)s+=4;
+    }
+    var all=terms.length>0;
+    for(i=0;i<terms.length;i++){if((t+' '+w).indexOf(terms[i])<0){all=false;break;}}
+    if(all)s+=18;
+    if(s>0&&e.k!=='Episode')s+=15;
+    return s;
+  }
+  function render(q,scored){
+    box.hidden=false;
+    list.innerHTML='';
+    if(!scored.length){
+      count.textContent='No matches for \u201C'+q+'\u201D. Try a state, a topic, or a single keyword.';
+      return;
+    }
+    var n=scored.length,show=Math.min(12,n);
+    count.textContent=n+' match'+(n===1?'':'es')+(n>show?' \u2014 showing the first '+show:'')+':';
+    for(var i=0;i<show;i++){
+      var e=scored[i][1];
+      var a=document.createElement('a');
+      a.className='ss-result';a.href=e.u;
+      var rt=document.createElement('span');rt.className='ss-rtitle';rt.textContent=e.t;a.appendChild(rt);
+      var rm=document.createElement('span');rm.className='ss-rmeta';
+      var b=document.createElement('span');b.className='ss-badge';b.textContent=e.k;rm.appendChild(b);
+      var meta=e.s||'';
+      if(e.d)meta+=(meta?' \u00B7 ':'')+fmtDate(e.d);
+      rm.appendChild(document.createTextNode(meta));
+      a.appendChild(rm);
+      if(e.x){var sn=document.createElement('span');sn.className='ss-rsnip';sn.textContent=e.x;a.appendChild(sn);}
+      list.appendChild(a);
+    }
+  }
+  function run(){
+    var q=input.value.trim().toLowerCase();
+    if(!q){box.hidden=true;lastResults=[];return;}
+    load().then(function(all){
+      var STOP={a:1,an:1,and:1,are:1,as:1,at:1,be:1,by:1,for:1,from:1,in:1,into:1,is:1,it:1,of:1,on:1,or:1,the:1,to:1,with:1};
+      var terms=q.replace(/&/g,' and ').split(/\s+/).filter(function(x){return x&&!STOP[x];});
+      if(!terms.length)terms=q.split(/\s+/);
+      var scored=[];
+      for(var i=0;i<all.length;i++){
+        var sc=score(all[i],q,terms);
+        if(sc>0)scored.push([sc,all[i]]);
+      }
+      scored.sort(function(a,b){
+        if(b[0]!==a[0])return b[0]-a[0];
+        if(a[1].d!==b[1].d)return (a[1].d||'')>(b[1].d||'')?-1:1;
+        return a[1].t<b[1].t?-1:1;
+      });
+      lastResults=scored.map(function(x){return x[1];});
+      render(q,scored);
+    }).catch(function(){
+      box.hidden=false;
+      count.textContent='Search is unavailable right now \u2014 please browse the menu above instead.';
+      list.innerHTML='';
+      lastResults=[];
+    });
+  }
+  var timer=null;
+  input.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,120);});
+  input.addEventListener('focus',function(){load();});
+  input.addEventListener('keydown',function(ev){if(ev.key==='Escape'){input.value='';box.hidden=true;lastResults=[];}});
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(lastResults.length){window.location.href=lastResults[0].u;}
+    else{run();}
+  });
+  var q0=new URLSearchParams(window.location.search).get('q');
+  if(q0){input.value=q0;run();}
+})();
+</script>
+<!-- /SITE-SEARCH -->
 </body>
 </html>
