@@ -46,6 +46,10 @@
 </style>
 </head>
 <body>
+<!-- GTranslate: sitewide translate button (added 2026-10-28) -->
+<div class="gtranslate-bar" style="text-align:center;padding:10px 8px 2px;font-family:Helvetica,Arial,sans-serif;font-size:13px"><span style="letter-spacing:1px;text-transform:uppercase;margin-right:8px">Translate</span><span class="gtranslate_wrapper"></span></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","fr","pt","zh-CN","zh-TW","ar","vi","ko","ru","uk","ht","it","de","ja","hi","tl","pl"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
 <header>
   <p class="name">Run the Room</p>
   <p class="tag">The weekly podcast on how business actually works — from the first idea to a running organization.</p>
@@ -54,6 +58,7 @@
 <nav>
   <a href="../index.html">The Show</a>
   <a href="../episodes.html">Episodes</a>
+  <a href="../subscribe.html">Subscribe</a>
   <a href="../states.html">States &amp; Resources</a>
   <a href="../index.html#listen">Listen</a>
   <a href="../interns.html">Internships</a>
@@ -142,8 +147,96 @@
   </div>
   <p class="note">Resource links point to official program and agency sites and were verified when this page was generated. Programs and URLs change — if a link fails, the SBA Local Assistance Finder above will route you to the current office.</p>
 </main>
+<!-- SUBSCRIBE -->
+<style>
+  .subscribe-block{background:var(--wash);border:1px solid var(--line);border-left:5px solid var(--gold);padding:18px 20px;margin:22px 0 4px}
+  .sb-label{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);display:block;margin:0 0 8px;font-weight:700}
+  .sb-intro{font-size:15.5px;margin:0 0 14px}
+  .sb-legend{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:14px 0 6px;font-weight:700}
+  .sb-topics{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px}
+  @media (max-width:560px){.sb-topics{grid-template-columns:1fr}}
+  .sb-choice{font-size:15px;display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+  .sb-choice input{margin-top:4px;accent-color:var(--navy);width:17px;height:17px;flex:none}
+  .sb-choice small{display:block;color:var(--muted);font-size:13px}
+  .sb-freq{display:flex;gap:18px;flex-wrap:wrap}
+  .sb-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .sb-input{font-family:Helvetica,Arial,sans-serif;font-size:16px;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);flex:1 1 240px;min-width:0;-webkit-appearance:none;appearance:none}
+  .sb-btn{font-family:Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:4px;padding:10px 22px;min-height:46px;cursor:pointer}
+  .sb-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+  .sb-note{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+  .sb-powered{font-family:Helvetica,Arial,sans-serif;font-size:11px;color:var(--muted);margin:8px 0 0}
+  .sb-powered a{color:var(--muted)}
+</style>
+
+<div class="subscribe-block">
+  <form action="https://buttondown.com/api/emails/embed-subscribe/educationacrossthestates" method="post">
+    <span class="sb-label">Subscribe &mdash; new episodes by email</span>
+    <p class="sb-intro">Get Run the Room in your inbox when it drops &mdash; and, if you like, our education coverage too. You pick the topics, you pick the pace. Free, always.</p>
+
+    <p class="sb-legend" id="sb-topics-label-rtr">Send me updates on</p>
+    <div class="sb-topics" role="group" aria-labelledby="sb-topics-label-rtr">
+      <label class="sb-choice"><input type="checkbox" name="tag" value="run-the-room" checked>
+        <span>Run the Room<small>New episodes every Sunday, 7:00 PM ET</small></span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="daily-briefings">
+        <span>Daily state briefings<small>Education Across the States, every weekday &mdash; all 50 states, DC, and the territories</small></span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="new-hampshire">
+        <span>New Hampshire coverage<small>NH Education Daily and the weekly NH Education Trends</small></span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="investigations-records">
+        <span>Investigations &amp; the Records Project<small>National investigations and Education Records Project findings</small></span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="sped-law-resources">
+        <span>Special education law &amp; resources<small>IDEA, Section 504, IEP/504 explainers, Law Library and Resources updates</small></span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="deep-dives-specials">
+        <span>Deep dives &amp; specials<small>Weekly deep dives, Regulations Section by Section, and national specials</small></span></label>
+    </div>
+
+    <p class="sb-legend" id="sb-freq-label-rtr">How often</p>
+    <div class="sb-freq" role="radiogroup" aria-labelledby="sb-freq-label-rtr">
+      <label class="sb-choice"><input type="radio" name="tag" value="freq-as-it-posts">
+        <span>As it posts</span></label>
+      <label class="sb-choice"><input type="radio" name="tag" value="freq-daily-digest">
+        <span>Daily digest</span></label>
+      <label class="sb-choice"><input type="radio" name="tag" value="freq-weekly-roundup" checked>
+        <span>Weekly roundup</span></label>
+    </div>
+
+    <p class="sb-legend" id="sb-found-label-rtr">How did you find us?</p>
+    <div class="sb-freq" role="radiogroup" aria-labelledby="sb-found-label-rtr">
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-search">
+        <span>Web search</span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-social">
+        <span>A social media post</span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-podcast">
+        <span>Podcast app or episode link</span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-referral">
+        <span>Someone recommended us</span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-news">
+        <span>A news article</span></label>
+      <label class="sb-choice"><input type="checkbox" name="tag" value="found-other">
+        <span>Somewhere else</span></label>
+    </div>
+
+    <p class="sb-legend" id="sb-other-label-rtr">Anything else you&rsquo;d like us to cover?</p>
+    <div class="sb-row" style="margin-top:6px">
+      <input type="text" name="metadata__other_topics" class="sb-input"
+             placeholder="Other topics of interest (optional)" aria-labelledby="sb-other-label-rtr">
+    </div>
+
+    <div class="sb-row">
+      <input type="email" name="email" class="sb-input" required autocomplete="email"
+             placeholder="you@example.com" aria-label="Email address">
+      <input type="hidden" name="embed" value="1">
+      <input type="hidden" name="tag" value="site-rtr">
+      <button type="submit" class="sb-btn">Subscribe</button>
+    </div>
+
+    <p class="sb-note">We&rsquo;ll send a confirmation link first &mdash; click it and you&rsquo;re in. Your address is used only for the updates you choose: no spam, no ads, and we never share or sell it. Unsubscribe in one click from any email. See our <a href="../privacy.html">Privacy &amp; Data Security page</a>.</p>
+    <p class="sb-powered">Powered by <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a>.</p>
+  </form>
+</div>
+<!-- /SUBSCRIBE -->
+
 <footer>
-  <p><span class="pname">Run the Room</span> · New episodes Sundays at 7:00 PM ET · Produced by Charles Mayfield</p>
+  <p><span class="pname">Run the Room</span> · New episodes Sundays at 7:00 PM ET · Executive Producer: Charles Mayfield · Associate Producer: Roman Greco</p>
   <p>© 2026 Run the Room. All rights reserved.</p>
 </footer>
 </body>
